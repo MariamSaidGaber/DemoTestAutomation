@@ -12,9 +12,19 @@ public class BrowserActions {
     {
         driver.get(Url);
     }
+
     public static String getCurrentUrl(WebDriver driver)
     {
         return driver.getCurrentUrl();
+    }
 
+    public static String getPageTitle(WebDriver driver)
+    {
+        return driver.getTitle();
+    }
+
+    public static void refreshPage(WebDriver driver)
+    {
+        driver.navigate().refresh();
     }
 }
