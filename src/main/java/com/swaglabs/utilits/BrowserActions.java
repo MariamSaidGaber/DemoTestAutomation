@@ -15,5 +15,6 @@ public class BrowserActions {
     public static String getCurrentUrl(WebDriver driver)
     {
         return driver.getCurrentUrl();
+
     }
 }

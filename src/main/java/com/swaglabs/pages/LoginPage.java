@@ -4,11 +4,7 @@ import com.swaglabs.utilits.BrowserActions;
 import com.swaglabs.utilits.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import java.time.Duration;
 
 public class LoginPage {
 
@@ -29,6 +25,7 @@ public class LoginPage {
     {
         BrowserActions.navigateToUrl(driver,Url);
     }
+
 
     //Actions  > wait - scroll - find -sendKeys
     public LoginPage enterUsername(String username)

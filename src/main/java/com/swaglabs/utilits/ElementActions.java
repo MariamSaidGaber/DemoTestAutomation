@@ -2,6 +2,7 @@ package com.swaglabs.utilits;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ElementActions {
 
@@ -16,7 +17,8 @@ public class ElementActions {
        // Waits.waitForElementVisible(driver,locator);
         Waits.waitForElementPresent(driver,locator);
         Scrolling.scrollToElememt(driver,locator);
-        driver.findElement(locator).sendKeys(data);
+        findElement(driver, locator).sendKeys(data);
+
 
     }
 
@@ -25,13 +27,19 @@ public class ElementActions {
     {
       //  Waits.waitForElementClickable(driver,locator);
         Scrolling.scrollToElememt(driver,locator);
-        driver.findElement(locator).click();
+        findElement(driver, locator).click();
     }
 
     public static String getText(WebDriver driver, By locator)
     {
         Waits.waitForElementVisible(driver,locator);
         Scrolling.scrollToElememt(driver, locator);
-        return driver.findElement(locator).getText();
+        return findElement(driver, locator).getText();
+
+    }
+
+    public static WebElement findElement(WebDriver driver, By locator)
+    {
+        return driver.findElement(locator);
     }
 }
