@@ -11,7 +11,7 @@ public class CustomSoftAssertion extends SoftAssert {
     {
         try {
             softAssertion.assertAll("Custom Soft Assertion");
-        }catch (AssertionError e)
+        }catch ( Exception e)
         {
             System.out.println("Custom Soft Assertion Failed");
         }
