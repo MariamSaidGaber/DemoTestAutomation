@@ -1,5 +1,7 @@
 package com.swaglabs.drivers;
 
+import com.swaglabs.utilits.LogsUtil;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import static org.testng.Assert.fail;
@@ -15,9 +17,11 @@ public class DriverManager {
         super();
     }
 
+    @Step("Create driver instance on: {browserName}")
     public static WebDriver createInstance(String browserName)
     {
         WebDriver driver = BrowserFactory.getBrowser(browserName);
+        LogsUtil.info("Driver is created",browserName);
         setDriver(driver);
        return getDriver();
     }
@@ -26,6 +30,7 @@ public class DriverManager {
         if(driverThreadLocal.get() ==null)
         {
             /*TestNG Assertion*/
+            LogsUtil.error("Driver is null");
             fail("Driver is null");
         }
         return driverThreadLocal.get();
