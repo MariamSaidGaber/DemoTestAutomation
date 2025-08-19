@@ -24,7 +24,9 @@ public class DriverManager {
         WebDriver driver = BrowserFactory.getBrowser(browserName);
         LogsUtil.info("Driver is created",browserName);
         setDriver(driver);
-       return getDriver();
+        System.out.println("DriverManager received browserType: " + browserName);
+
+        return getDriver();
     }
     public static WebDriver getDriver()
     {

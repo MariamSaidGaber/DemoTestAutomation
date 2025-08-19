@@ -10,6 +10,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.*;
 import java.io.File;
+import java.util.Properties;
+
+import static com.swaglabs.utilits.PropertiesUtils.getPropertyValue;
 import static com.swaglabs.utilits.PropertiesUtils.loadProperties;
 
 
@@ -38,7 +41,8 @@ public class LoginTest {
     @BeforeMethod
     public void setUp()
     {
-        String browserName = PropertiesUtils.getPropertyValue("browserType");
+        //String browserName = PropertiesUtils.getPropertyValue("browserType");
+        String browserName = getPropertyValue("browserType");
         DriverManager.createInstance(browserName);
 
         /**********(Method 1)*******************/

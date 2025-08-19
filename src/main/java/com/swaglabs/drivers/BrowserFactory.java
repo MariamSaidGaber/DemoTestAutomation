@@ -42,7 +42,7 @@ public class BrowserFactory {
         firefoxOptions.addArguments("--disable-infobars");
         firefoxOptions.addArguments("--disable-notifications");
         firefoxOptions.addArguments("--remote-allow-origins");
-        if(!PropertiesUtils.getPropertyValue("excutionType").equalsIgnoreCase("local"))
+        if(!PropertiesUtils.getPropertyValue("executionType").equalsIgnoreCase("local"))
         {
             firefoxOptions.addArguments("--headless");
         }
@@ -59,7 +59,7 @@ public class BrowserFactory {
         edgeOptions.addArguments("--disable-infobars");
         edgeOptions.addArguments("--disable-notifications");
         edgeOptions.addArguments("--remote-allow-origins");
-        if(!PropertiesUtils.getPropertyValue("excutionType").equalsIgnoreCase("local"))
+        if(!PropertiesUtils.getPropertyValue("executionType").equalsIgnoreCase("local"))
         {
             edgeOptions.addArguments("--headless");
         }
@@ -82,7 +82,7 @@ public class BrowserFactory {
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-notifications");
         options.addArguments("--remote-allow-origins");
-        if(!PropertiesUtils.getPropertyValue("excutionType").equalsIgnoreCase("local"))
+        if(!PropertiesUtils.getPropertyValue("executionType").equalsIgnoreCase("local"))
         {
             options.addArguments("--headless");
         }
