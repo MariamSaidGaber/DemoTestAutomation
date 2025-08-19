@@ -1,6 +1,7 @@
 package com.swaglabs.drivers;
 
 import com.swaglabs.utilits.LogsUtil;
+import com.swaglabs.utilits.PropertiesUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 

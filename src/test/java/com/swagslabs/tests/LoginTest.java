@@ -2,24 +2,24 @@ package com.swagslabs.tests;
 
 import com.swaglabs.drivers.DriverManager;
 import com.swaglabs.pages.LoginPage;
-import com.swaglabs.utilits.BrowserActions;
-import com.swaglabs.utilits.CustomSoftAssertion;
-import com.swaglabs.utilits.FilesUtiles;
+import com.swaglabs.utilits.*;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
-
+import org.testng.annotations.*;
 import java.io.File;
+import static com.swaglabs.utilits.PropertiesUtils.loadProperties;
+
+
 
 public class LoginTest {
 
+    //Variables
+
      File allure_result = new File("test-outputs/allure-result");
+     JsonUtils testData;
    // LoginPage loginPage ;
     //Tests
 
@@ -28,7 +28,9 @@ public class LoginTest {
     @BeforeSuite
     public void beforeSuite()
     {
+        loadProperties();
         FilesUtiles.deleteFiles(allure_result);
+        testData = new JsonUtils("test-data");
     }
 
 
@@ -36,7 +38,9 @@ public class LoginTest {
     @BeforeMethod
     public void setUp()
     {
-        DriverManager.createInstance("chrome");
+        String browserName = PropertiesUtils.getPropertyValue("browserType");
+        DriverManager.createInstance(browserName);
+
         /**********(Method 1)*******************/
         /*
         loginPage = new LoginPage(driver);
@@ -46,17 +50,18 @@ public class LoginTest {
         new LoginPage(DriverManager.getDriver()).navigateToLoginPage("https://www.saucedemo.com/");
     }
 
-    @Test(priority = 0)
+    @Test()
     public void successfulLogin()
     {
-        new LoginPage(DriverManager.getDriver()).enterUsername("standard_user")
-                .enterPassword("secret_sauce")
+        new LoginPage(DriverManager.getDriver()).enterUsername(testData.getJsonData("login-credentials.username"))
+                .enterPassword(testData.getJsonData("login-credentials.password"))
                 .clickLoginButton()
                 .assertSuccessfulLogin();
+        ScreenshotsUtils.takeScreenshots("successful-login");
 
     }
 
-//    @Test(priority = 1)
+//    @Test()
 //    public void unSuccessfulLogin()
 //    {
 //        new LoginPage(DriverManager.getDriver()).enterUsername("standard_usej")
@@ -74,4 +79,9 @@ public class LoginTest {
         //CustomSoftAssertion.customAssertAll();
     }
 
+    @AfterClass
+    public void afterClass()
+    {
+        AllureUtils.attacheLogsToAllureReport();
+    }
 }

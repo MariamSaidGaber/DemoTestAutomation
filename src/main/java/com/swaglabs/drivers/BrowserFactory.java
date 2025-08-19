@@ -1,5 +1,6 @@
 package com.swaglabs.drivers;
 
+import com.swaglabs.utilits.PropertiesUtils;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,7 +42,11 @@ public class BrowserFactory {
         firefoxOptions.addArguments("--disable-infobars");
         firefoxOptions.addArguments("--disable-notifications");
         firefoxOptions.addArguments("--remote-allow-origins");
-        //firefoxOptions.addArguments("--headless");
+        if(!PropertiesUtils.getPropertyValue("excutionType").equalsIgnoreCase("local"))
+        {
+            firefoxOptions.addArguments("--headless");
+        }
+
         firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         firefoxOptions.setAcceptInsecureCerts(true);
         return firefoxOptions;
@@ -54,7 +59,11 @@ public class BrowserFactory {
         edgeOptions.addArguments("--disable-infobars");
         edgeOptions.addArguments("--disable-notifications");
         edgeOptions.addArguments("--remote-allow-origins");
-        //edgeOptions.addArguments("--headless");
+        if(!PropertiesUtils.getPropertyValue("excutionType").equalsIgnoreCase("local"))
+        {
+            edgeOptions.addArguments("--headless");
+        }
+        //
 
         Map<String, Object> edgePrefs = Map.of(
                 "profile.default_content_setting_values.notifications",false ,
@@ -73,7 +82,11 @@ public class BrowserFactory {
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-notifications");
         options.addArguments("--remote-allow-origins");
-        //options.addArguments("--headless");
+        if(!PropertiesUtils.getPropertyValue("excutionType").equalsIgnoreCase("local"))
+        {
+            options.addArguments("--headless");
+        }
+
         Map<String, Object> prefs = Map.of(
                 "profile.default_content_setting_values.notifications",false ,
                 "credentials_enable_service", false,
