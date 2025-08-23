@@ -1,6 +1,7 @@
 package com.swagslabs.tests;
 
 import com.swaglabs.drivers.DriverManager;
+import com.swaglabs.listeners.TestNGListeners;
 import com.swaglabs.pages.LoginPage;
 import com.swaglabs.utilits.*;
 import org.openqa.selenium.PageLoadStrategy;
@@ -16,34 +17,31 @@ import static com.swaglabs.utilits.PropertiesUtils.getPropertyValue;
 import static com.swaglabs.utilits.PropertiesUtils.loadProperties;
 
 
-
+@Listeners(TestNGListeners.class)
 public class LoginTest {
 
     //Variables
-
-     File allure_result = new File("test-outputs/allure-result");
+    WebDriver driver;
      JsonUtils testData;
    // LoginPage loginPage ;
     //Tests
 
     //Configuration
 
-    @BeforeSuite
-    public void beforeSuite()
+
+    @BeforeClass
+    public void beforeClass()
     {
-        loadProperties();
-        FilesUtiles.deleteFiles(allure_result);
+
         testData = new JsonUtils("test-data");
     }
-
-
 
     @BeforeMethod
     public void setUp()
     {
-        //String browserName = PropertiesUtils.getPropertyValue("browserType");
+
         String browserName = getPropertyValue("browserType");
-        DriverManager.createInstance(browserName);
+        driver = DriverManager.createInstance(browserName);
 
         /**********(Method 1)*******************/
         /*
@@ -51,17 +49,17 @@ public class LoginTest {
         loginPage.navigateToLoginPage("https://www.saucedemo.com/");
          */
         /*********(Method 2)***Anonymous object***************/
-        new LoginPage(DriverManager.getDriver()).navigateToLoginPage("https://www.saucedemo.com/");
+        new LoginPage(driver).navigateToLoginPage("https://www.saucedemo.com/");
     }
 
     @Test()
     public void successfulLogin()
     {
-        new LoginPage(DriverManager.getDriver()).enterUsername(testData.getJsonData("login-credentials.username"))
+        new LoginPage(driver).enterUsername(testData.getJsonData("login-credentials.username"))
                 .enterPassword(testData.getJsonData("login-credentials.password"))
                 .clickLoginButton()
                 .assertSuccessfulLogin();
-        ScreenshotsUtils.takeScreenshots("successful-login");
+
 
     }
 
@@ -79,13 +77,8 @@ public class LoginTest {
     public void tearDown()
     {
 
-        BrowserActions.closeBrowser(DriverManager.getDriver());
+        BrowserActions.closeBrowser(driver);
         //CustomSoftAssertion.customAssertAll();
     }
 
-    @AfterClass
-    public void afterClass()
-    {
-        AllureUtils.attacheLogsToAllureReport();
-    }
 }
