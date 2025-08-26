@@ -19,14 +19,17 @@ public class Waits {
         /*it is the detailed  to the row */
      /*   WebElement element = driver.findElement(locator);
         return element !=null ? element: null;*/
+        LogsUtil.info("Waiting the element to be present: ", locator.toString());
         return new WebDriverWait(driver, Duration.ofSeconds(10)).until(driver1 -> driver1.findElement(locator));
     }
 
     /* Function to make the element visible */
     public static WebElement waitForElementVisible(WebDriver driver, By locator) {
+
+        LogsUtil.info("Waiting the element to be visible: ", locator.toString());
         return new WebDriverWait(driver, Duration.ofSeconds(10)).until(driver1 ->
         {
-            WebElement element = waitForElementVisible(driver, locator);
+            WebElement element = waitForElementPresent(driver, locator);
             return element.isDisplayed() ? element : null;
 
         });
@@ -35,6 +38,7 @@ public class Waits {
 
     /* Function to make the element clickable */
     public static WebElement waitForElementClickable(WebDriver driver, By locator) {
+        LogsUtil.info("Waiting the element to be clickable: ", locator.toString());
         return new WebDriverWait(driver, Duration.ofSeconds(10)).until(driver1 ->
         {
 
