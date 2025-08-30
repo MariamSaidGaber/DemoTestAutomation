@@ -82,17 +82,17 @@ public class LoginPage {
     }
     /*Hard Assertion*/
     @Step("Assert Successful Login")
-    public LoginPage assertSuccessfulLogin()
+    public HomePage assertSuccessfulLogin()
     {
         //Validation.validatePageUrl(driver, "https://www.saucedemo.com/inventory.html");
         Validation.validatePageUrl(driver, getPropertyValue("homeURL"));
-       return this;
+       return new HomePage(driver);
     }
     @Step("Assert Unsuccessful Login")
-    public LoginPage assertUnsuccessfullLogin()
+    public HomePage assertUnsuccessfullLogin()
     {
         Validation.validateNotEquals(getErrorMessage(),getPropertyValue("errorMSG"),"Error message is not expected");
-        return this;
+        return new HomePage(driver);
     }
 
 }

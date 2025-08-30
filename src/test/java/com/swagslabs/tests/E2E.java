@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 import static com.swaglabs.utilits.PropertiesUtils.getPropertyValue;
+import static com.swaglabs.utilits.TimestampUtils.getTimestamp;
 
 
 @Listeners(TestNGListeners.class)
@@ -19,6 +20,8 @@ public class E2E {
     //Variables
      WebDriver driver;
      JsonUtils testData;
+     String FIRST_NAME = testData.getJsonData("information-form.firstName")+getTimestamp();
+     String LAST_NAME =  testData.getJsonData("information-form.lastName")+getTimestamp();
    // LoginPage loginPage ;
     //Tests
 
@@ -98,11 +101,11 @@ public class E2E {
     public void finishCheckout()
     {
         new InformationPage(driver).
-                clickOnContinueButton().
-                clickOnFinishButton().
-                assertConfirmationMessage(testData.getJsonData("confirmation-message"));
-                //.clickOnBackHome();
-        
+                clickOnContinueButton()
+                .clickOnFinishButton()
+                .assertConfirmationMessage(testData.getJsonData("confirmation-message"))
+                .clickOnBackHome();
+
     }
 
     @AfterClass

@@ -89,7 +89,7 @@ public class FilesUtiles {
 
     public static void cleanDirectory(File file) {
         try {
-            FileUtils.cleanDirectory(file);
+            FileUtils.deleteQuietly(file);
         } catch (Exception e)
         {
             LogsUtil.info(e.getMessage());

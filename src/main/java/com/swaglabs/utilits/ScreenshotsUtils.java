@@ -8,6 +8,8 @@ import org.testng.annotations.DataProvider;
 import java.io.File;
 import java.nio.file.Files;
 
+import static com.swaglabs.utilits.TimestampUtils.getTimestamp;
+
 public class ScreenshotsUtils {
     public static final String SCREENSHOT_PATH = "test-outputs/screenshots/";
     private ScreenshotsUtils()
@@ -18,7 +20,7 @@ public class ScreenshotsUtils {
     {
         try {
             File screenshot = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
-            File screenshotFile = new File(SCREENSHOT_PATH + screenshotName + ".png");
+            File screenshotFile = new File(SCREENSHOT_PATH + screenshotName +"_" + getTimestamp() + ".png");
             FilesUtiles.copyFile(screenshot, screenshotFile);
             AllureUtils.attachScreenshotToAllure(screenshotName, screenshotFile.getPath());
         } catch (Exception e) {

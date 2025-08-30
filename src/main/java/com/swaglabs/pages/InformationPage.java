@@ -39,10 +39,11 @@ public class InformationPage {
     }
     //validation
     @Step("Assert information page")
-    public void assertInformationPage(String firstName, String lastName, String postalCode)
+    public InformationPage assertInformationPage(String firstName, String lastName, String postalCode)
     {
         CustomSoftAssertion.softAssertion.assertEquals(ElementActions.getTextFromInput(driver,this.firstName),firstName);
         CustomSoftAssertion.softAssertion.assertEquals(ElementActions.getTextFromInput(driver,this.lastName),lastName);
         CustomSoftAssertion.softAssertion.assertEquals(ElementActions.getTextFromInput(driver,this.postalCode),postalCode);
+        return this;
     }
 }

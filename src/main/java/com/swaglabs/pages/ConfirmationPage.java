@@ -34,10 +34,11 @@ public class ConfirmationPage {
 
     //validation
     @Step("Assert confirmation message")
-    public void assertConfirmationMessage(String expectedMessage)
+    public ConfirmationPage assertConfirmationMessage(String expectedMessage)
     {
         String actualMessage = getConfirmationMessage();
         Validation.validateEquals(actualMessage, expectedMessage,"Confirmation message mismatch");
+        return this;
     }
 
 }
