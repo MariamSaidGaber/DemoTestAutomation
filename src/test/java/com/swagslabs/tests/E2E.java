@@ -20,8 +20,9 @@ public class E2E {
     //Variables
      WebDriver driver;
      JsonUtils testData;
-     String FIRST_NAME = testData.getJsonData("information-form.firstName")+getTimestamp();
-     String LAST_NAME =  testData.getJsonData("information-form.lastName")+getTimestamp();
+     /*To make the name unique*/
+     String FIRST_NAME;
+     String LAST_NAME;
    // LoginPage loginPage ;
     //Tests
 
@@ -33,7 +34,8 @@ public class E2E {
     {
 
         testData = new JsonUtils("test-data");
-
+        FIRST_NAME = testData.getJsonData("information-form.firstName")+getTimestamp();
+        LAST_NAME =  testData.getJsonData("information-form.lastName")+getTimestamp();
         String browserName = getPropertyValue("browserType");
         driver = DriverManager.createInstance(browserName);
 
@@ -88,12 +90,8 @@ public class E2E {
     public void fillInformationForm()
     {
         new CartPage(driver).clickCheckoutButton().
-            fillInformationForm(testData.getJsonData("information-form.firstName"),
-                    testData.getJsonData("information-form.lastName"),
-                    testData.getJsonData("information-form.postalCode")).
-            assertInformationPage(testData.getJsonData("information-form.firstName"),
-                    testData.getJsonData("information-form.lastName"),
-                    testData.getJsonData("information-form.postalCode") );
+            fillInformationForm(FIRST_NAME, LAST_NAME, testData.getJsonData("information-form.postalCode")).
+            assertInformationPage(FIRST_NAME, LAST_NAME, testData.getJsonData("information-form.postalCode") );
 
     }
 

@@ -1,0 +1,60 @@
+[INFO] - [30-08-2025 18:30:15] [main] [com.swaglabs.listeners.TestNGListeners] - Test execution started
+[INFO] - [30-08-2025 18:30:15] [main] [com.swaglabs.utilits.PropertiesUtils] - Loading Properties File Data
+[INFO] - [30-08-2025 18:30:15] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\MARIEM\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
+[INFO] - [30-08-2025 18:30:16] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'information-form.firstName' in the json file: 'test-data' has value: 'testFirst_'
+[INFO] - [30-08-2025 18:30:16] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'information-form.lastName' in the json file: 'test-data' has value: 'testSecond_'
+[INFO] - [30-08-2025 18:30:18] [main] [com.swaglabs.drivers.DriverManager] - Driver is created chrome
+[ERROR] - [30-08-2025 18:30:18] [main] [io.qameta.allure.util.NamingUtils] - Could not find parameter url
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.BrowserActions] - Navigated to url:  https://www.saucedemo.com/
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'login-credentials.username' in the json file: 'test-data' has value: 'standard_user'
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be present:  By.id: user-name
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.id: user-name
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.id: user-name
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.ElementActions] - Data entered standard_user In the Field:  By.id: user-name
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'login-credentials.password' in the json file: 'test-data' has value: 'secret_sauce'
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be present:  By.id: password
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.id: password
+[INFO] - [30-08-2025 18:30:19] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.id: password
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Data entered secret_sauce In the Field:  By.id: password
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.id: login-button
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.id: login-button
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Clicked on the element:  By.id: login-button
+[ERROR] - [30-08-2025 18:30:20] [main] [io.qameta.allure.util.NamingUtils] - Could not find parameter url
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.BrowserActions] - Current URL:  https://www.saucedemo.com/inventory.html
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.AllureUtils] - Logs attached to Allure Report
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.listeners.TestNGListeners] - Test case successfulLogin passed
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'product-names.item1.name' in the json file: 'test-data' has value: 'Sauce Labs Backpack'
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.pages.HomePage] - Adding Sauce Labs Backpackto cart
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Clicked on the element:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'product-names.item1.name' in the json file: 'test-data' has value: 'Sauce Labs Backpack'
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be visible:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be present:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Getting the text from the element  [unknown locator]  Text:  Remove
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  [unknown locator]
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.pages.HomePage] - Actual Value: Remove
+[INFO] - [30-08-2025 18:30:20] [main] [com.swaglabs.pages.HomePage] - Sauce Labs Backpackadded to cart successfully
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.AllureUtils] - Logs attached to Allure Report
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.listeners.TestNGListeners] - Test case addingProductToCart passed
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: [data-test='shopping-cart-link']
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: [data-test='shopping-cart-link']
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Clicked on the element:  By.cssSelector: [data-test='shopping-cart-link']
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'product-names.item1.name' in the json file: 'test-data' has value: 'Sauce Labs Backpack'
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.JsonUtils] - Json path: 'product-names.item1.price' in the json file: 'test-data' has value: '$29.99'
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be visible:  By.cssSelector: .inventory_item_name
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be present:  By.cssSelector: .inventory_item_name
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: .inventory_item_name
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: .inventory_item_name
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Getting the text from the element  By.cssSelector: .inventory_item_name  Text:  Sauce Labs Backpack
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: .inventory_item_name
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be visible:  By.cssSelector: .inventory_item_price
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.Waits] - Waiting the element to be present:  By.cssSelector: .inventory_item_price
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: .inventory_item_price
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: .inventory_item_price
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Getting the text from the element  By.cssSelector: .inventory_item_price  Text:  $29.99
+[INFO] - [30-08-2025 18:30:21] [main] [com.swaglabs.utilits.ElementActions] - Finding the element:  By.cssSelector: .inventory_item_price
